@@ -1,0 +1,72 @@
+<div class="container">
+<mat-toolbar>
+  <span>Agregar equipo</span>
+</mat-toolbar>
+
+<mat-card style="margin-top: 10px;">
+
+<form [formGroup]="form" (ngSubmit)="agregarEquipo()">
+
+<mat-grid-list cols="3" rowHeight="70px">
+
+<mat-grid-tile [colspan]="1" [rowspan]="1">
+
+  <mat-form-field class="ancho-form" appearance="fill"  >
+    <mat-label>Folio</mat-label>
+    <input matInput formControlName="folio">
+  </mat-form-field>
+
+</mat-grid-tile>
+<mat-grid-tile [colspan]="2" [rowspan]="5">
+IMG
+</mat-grid-tile>
+<mat-grid-tile  [colspan]="1" [rowspan]="1">
+
+  <mat-form-field class="ancho-form" appearance="fill"   >
+    <mat-label >Modelo</mat-label>
+    <mat-select formControlName="modelo">
+      <mat-option  *ngFor="let item of Modelos" value="one" >{{item}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</mat-grid-tile>
+
+<mat-grid-tile [colspan]="1" [rowspan]="1" >
+
+  <mat-form-field  class="ancho-form" appearance="fill">
+    <mat-label>No. Serie</mat-label>
+    <input matInput  formControlName="numeroSerie">
+  </mat-form-field>
+
+</mat-grid-tile>
+<mat-grid-tile [colspan]="1" [rowspan]="1" >
+
+  <mat-form-field class="ancho-form" appearance="fill"   >
+    <mat-label >Clasificacion</mat-label>
+    <mat-select formControlName="clasificacion">
+      <mat-option  *ngFor="let item of Clasificacion" value="one"   >{{item}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</mat-grid-tile >
+
+<mat-grid-tile  class="btn-form-add" [colspan]="1" [rowspan]="1" >
+
+  <button type="submit" mat-fab style="margin-right: 30px;" >
+    <mat-icon style="color:rgb(219, 219, 219)">arrow_back</mat-icon>
+  </button>
+
+  <button mat-fab [disabled]="form.invalid" >
+    <mat-icon>done_all</mat-icon>
+  </button>
+
+</mat-grid-tile>
+
+</mat-grid-list>
+
+</form>
+
+</mat-card>
+
+
+</div>

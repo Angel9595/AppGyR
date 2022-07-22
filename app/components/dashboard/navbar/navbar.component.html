@@ -1,0 +1,13 @@
+  <mat-toolbar color="primary">
+    <span>Report GYR</span>
+    <span class="example-spacer"></span>
+    <button class="btn"  *ngFor="let item of menu" [routerLink]="item.redirect" mat-stroked-button color="primary">{{item.nombre}}</button>
+    <span class="example-spacer"></span>
+    <button  routerLink="/logout" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="accent">
+      <mat-icon>logout</mat-icon>
+    </button>
+
+  </mat-toolbar>
+
+
+
